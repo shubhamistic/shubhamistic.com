@@ -1,0 +1,60 @@
+* {box-sizing: border-box;}
+button, input, textarea {
+  all: unset;
+  box-sizing: border-box;
+}
+button {cursor: pointer}
+p, h1, h2, h3, h4, h5, h6 {margin: 0}
+a {text-decoration: none;}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  scroll-behavior: smooth;
+  overflow: hidden;
+
+  #root {
+    min-height: 575px;
+    height: 100dvh;
+    width: 100dvw;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+/* Mobile devices */
+@media screen and (max-width: 600px) {
+  body #root {min-width: 320px;}
+}
+
+/* iPads, Tablets */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  body #root {min-width: 601px;}
+}
+
+/* Small screens, laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  body #root {min-width: 769px;}
+}
+
+/* Large Devices (Desktops) */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  body #root {min-width: 1025px;}
+}
+
+/* Extra Large Devices (Large Desktops) */
+@media only screen and (min-width: 1201px) {
+  body #root {min-width: 1201px;}
+}
