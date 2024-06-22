@@ -5,3 +5,16 @@
 .horizontal-hexagon {
   clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
 }
+
+.horizontal-octagon {
+  clip-path: polygon(
+    2% 0%,
+    98% 0%,
+    100% 25%,
+    100% 75%,
+    98% 100%,
+    2% 100%,
+    0% 75%,
+    0% 25%
+  );
+}
