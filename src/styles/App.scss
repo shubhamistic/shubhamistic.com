@@ -22,7 +22,6 @@ p {font-family: 'Changa', sans-serif;}
   }
 
   main {
-    //background-color: aquamarine;
     width: 100%;
     max-width: 1500px;
     min-height: 10000px; // temp
@@ -32,8 +31,19 @@ p {font-family: 'Changa', sans-serif;}
       min-height: 575px;
       height: calc(100dvh - 60px);
       width: 100%;
-      //background-color: springgreen;
     }
+  }
+
+  .profile-container {
+    z-index: 999;
+    position: fixed;
+    top: 60px;
+    width: 100%;
+    max-width: 1650px;
+    padding: 0 75px;
+    display: flex;
+    justify-content: flex-end;
+    pointer-events: none;
   }
 }
 
@@ -48,6 +58,7 @@ p {font-family: 'Changa', sans-serif;}
         height: 300px;
       }
     }
+    .profile-container {padding: 0 20px;}
   }
 }
 
@@ -61,15 +72,22 @@ p {font-family: 'Changa', sans-serif;}
         height: 350px;
       }
     }
+    .profile-container {padding: 0 30px;}
   }
 }
 
 /* Small screens, laptops */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .app {padding: 0 50px;}
+  .app {
+    padding: 0 50px;
+    .profile-container {padding: 0 50px;}
+  }
 }
 
 /* Large Devices (Desktops) */
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
-  .app {padding: 0 50px;}
+  .app {
+    padding: 0 50px;
+    .profile-container {padding: 0 50px;}
+  }
 }

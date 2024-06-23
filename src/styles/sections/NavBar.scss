@@ -2,8 +2,7 @@
 @import "../scss_components/polygons";
 
 .nav-bar {
-  //background-color: #a77bf3;
-  z-index: 999;
+  z-index: 99;
   height: 120px;
   width: 100%;
   max-width: 1500px;
@@ -46,7 +45,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    //background-color: #a77bf3;
 
     .nav-section-expanded {
       height: 40px;

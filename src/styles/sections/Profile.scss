@@ -1,0 +1,40 @@
+@import "../scss_components/buttons";
+
+.profile {
+  width: 400px;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  border: solid 1px gray;
+  box-shadow: inset -2px -2px 10px #424242;
+  background-color: rgba(54, 54, 54, 0.75);
+  pointer-events: auto;
+
+  .profile-links {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .profile-carousel {
+    height: 190px;
+    width: 100%;
+  }
+
+  .line {
+    width: 100%;
+    margin: 20px 0;
+    border-top: solid 1px gray;
+  }
+
+  .about-text {
+    width: 100%;
+    font-size: 14px;
+    color: whitesmoke;
+    text-align: justify;
+  }
+}

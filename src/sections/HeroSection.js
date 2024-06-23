@@ -1,8 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import "../styles/sections/HeroSection.scss"
+import "../styles/sections/HeroSection.scss";
+
 
 export default function HeroSection() {
+
   return (
     <div className="hero-section">
       <p className="intro-desc">

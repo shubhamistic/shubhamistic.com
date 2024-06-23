@@ -1,7 +1,7 @@
 import CustomScrollbar from './CustomScrollbar';
-import NavBar from './NavBar';
+import Carousel from './Carousel';
 
 export {
   CustomScrollbar,
-  NavBar
+  Carousel
 };

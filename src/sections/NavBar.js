@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faHouse, faEnvelope, faArrowUpRightFromSquare, faBars
+  faHouse, faArrowUpRightFromSquare, faBars
 } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { useMediaQuery } from 'react-responsive';
-import "../styles/components/NavBar.scss"
+import "../styles/sections/NavBar.scss";
+import { useMain } from '../hooks';
 
 
 export default function NavBar() {
+  const { handleToggleShowProfileButton } = useMain();
   const [expandNavSectionsButton, setExpandNavSectionsButton] = useState(false);
 
   // media queries
@@ -31,18 +32,6 @@ export default function NavBar() {
   const openResume = () => {
     // Function to open Resume in the new tab
     window.open('https://shubhamistic.github.io/resume/', '_blank');
-  };
-  const openGithub = () => {
-    // Function to open GitHub in the new tab
-    window.open('https://github.com/shubhamistic', '_blank');
-  };
-  const openLinkedIn = () => {
-    // Function to open LinkedIn in the new tab
-    window.open('https://www.linkedin.com/in/shubhamistic/', '_blank');
-  };
-  const openMail = () => {
-    // Function to open E-Mail
-    window.location.href = 'mailto:shubham2003garg@gmail.com';
   };
 
   return (
@@ -86,27 +75,16 @@ export default function NavBar() {
         </div>
 
         <div className="nav-section nav-section-3">
-          <button className="square-btn my-profile-btn" onClick={() => {}}>
+          {/*Open my-profile button*/}
+          <button
+            className="square-btn my-profile-btn"
+            onClick={handleToggleShowProfileButton}>
             <img
               src="https://raw.githubusercontent.com/shubhamistic/shubhamistic/main/assets/shubhamistic-icon-256x256.ico"
               alt="my-profile"
             />
           </button>
         </div>
-
-        {/*/!*Open GitHub in the new tab button*!/*/}
-        {/*<button className="square-btn" onClick={openGithub}>*/}
-        {/*  <FontAwesomeIcon icon={faGithub} className="icon"/>*/}
-        {/*</button>*/}
-        {/*/!*Open LinkedIn in the new tab button*!/*/}
-        {/*<button className="square-btn" onClick={openLinkedIn}>*/}
-        {/*  <FontAwesomeIcon icon={faLinkedinIn} className="icon"/>*/}
-        {/*</button>*/}
-        {/*/!*Open E-Mail button*!/*/}
-        {/*<button className="square-btn" onClick={openMail}>*/}
-        {/*  <FontAwesomeIcon icon={faEnvelope} className="icon"/>*/}
-        {/*</button>*/}
-        {/*Open my-profile button*/}
       </div>
 
       <div className="nav-bar-bottom">
