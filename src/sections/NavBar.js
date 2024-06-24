@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faHouse, faArrowUpRightFromSquare, faBars
+  faHouse, faArrowUpRightFromSquare, faBars, faXmark
 } from '@fortawesome/free-solid-svg-icons';
 import { useMediaQuery } from 'react-responsive';
 import "../styles/sections/NavBar.scss";
@@ -9,7 +9,11 @@ import { useMain } from '../hooks';
 
 
 export default function NavBar() {
-  const { handleToggleShowProfileButton } = useMain();
+  const {
+    showProfile,
+    handleToggleShowProfileButton
+  } = useMain();
+
   const [expandNavSectionsButton, setExpandNavSectionsButton] = useState(false);
 
   // media queries
@@ -78,16 +82,22 @@ export default function NavBar() {
           {/*Open my-profile button*/}
           <button
             className="square-btn my-profile-btn"
-            onClick={handleToggleShowProfileButton}>
-            <img
-              src="https://raw.githubusercontent.com/shubhamistic/shubhamistic/main/assets/shubhamistic-icon-256x256.ico"
-              alt="my-profile"
-            />
+            onClick={handleToggleShowProfileButton}
+            style={{ backgroundColor: showProfile ? "unset": null }}
+          >
+            {showProfile ? (
+              <FontAwesomeIcon icon={faXmark} className="icon"/>
+            ) : (
+              <img
+                src='https://raw.githubusercontent.com/shubhamistic/shubhamistic/main/assets/shubhamistic-icon-256x256.ico'
+                alt='my-profile'
+              />
+            )}
           </button>
         </div>
       </div>
 
-      <div className="nav-bar-bottom">
+      <div className='nav-bar-bottom'>
         {expandNavSectionsButton && (
           <div className='nav-section-expanded'>
 

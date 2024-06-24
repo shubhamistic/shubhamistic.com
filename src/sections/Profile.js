@@ -3,6 +3,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import "../styles/sections/Profile.scss"
 import { Carousel } from "../components"
+import albumPlaceholderImage from "../assets/album-placeholder.png";
 
 export default function Profile() {
   const album_links = [
@@ -46,7 +47,10 @@ export default function Profile() {
       <div className="line"></div>
 
       <div className="profile-carousel">
-        <Carousel images={album_links} />
+        <Carousel
+          placeholderImage={albumPlaceholderImage}
+          images={album_links}
+        />
       </div>
 
       <div className="line"></div>

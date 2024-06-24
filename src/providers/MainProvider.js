@@ -3,7 +3,9 @@ import { useProvideMain } from '../hooks';
 
 export const MainContext = createContext({
   showProfile: false,
-  handleToggleShowProfileButton: () => {}
+  handleToggleShowProfileButton: () => {},
+  fetchedAlbumImages: [],
+  handleFetchImage: () => {}
 });
 
 export const MainProvider = ({ children }) => {

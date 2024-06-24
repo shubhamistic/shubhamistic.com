@@ -1,42 +1,53 @@
 import { useEffect, useState } from 'react';
 import '../styles/components/Carousel.scss';
+import { useMain } from '../hooks';
 
 
 export default function Carousel(props){
   // images: array of image links
-  const { images } = props;
+  const { placeholderImage, images } = props;
+  const { fetchedAlbumImages, handleFetchImage} = useMain();
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(1);
-  const [currentImageSrc, setCurrentImageSrc] = useState('');
-
-  useEffect(() => {
-    setCurrentImageSrc(images[0]);
-  }, [images])
+  const [currentImageIndex, setCurrentImageIndex] = useState(-1);
 
   useEffect(() => {
-    const changeImageSrc = () => {
-      setCurrentImageSrc(images[currentImageIndex]);
-
-      const newCurrentImageIndex = currentImageIndex + 1;
+    const changeImage = async () => {
+      let newCurrentImageIndex = currentImageIndex + 1;
       if (newCurrentImageIndex === images.length) {
-        setCurrentImageIndex(0);
-      } else {
-        setCurrentImageIndex(newCurrentImageIndex);
+        newCurrentImageIndex = 0;
       }
+
+      // handle request and add image to fetchedImages state
+      await handleFetchImage(
+        images[newCurrentImageIndex],
+        newCurrentImageIndex,
+        placeholderImage
+      );
+
+      setCurrentImageIndex(newCurrentImageIndex);
     };
 
+    if (currentImageIndex === -1) {
+      changeImage().then();
+      return;
+    }
+
     // Set timeout to call the function after 2 seconds
-    const timeoutId = setTimeout(changeImageSrc, 2000);
+    const timeoutId = setTimeout(changeImage, 2000);
 
     // Cleanup the timeout
     return () => clearTimeout(timeoutId);
-  }, [currentImageIndex, images])
+  }, [currentImageIndex, handleFetchImage, images, placeholderImage]);
 
   return (
     <div className="carousel">
       <img
-        src={currentImageSrc}
-        alt={currentImageSrc}
+        src={
+          (fetchedAlbumImages.length && currentImageIndex >= 0)
+            ? fetchedAlbumImages[currentImageIndex]
+            : placeholderImage
+        }
+        alt="loading album..."
       />
     </div>
   );
