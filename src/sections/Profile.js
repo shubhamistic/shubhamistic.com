@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpRightFromSquare, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import "../styles/sections/Profile.scss"
 import { Carousel } from "../components"
@@ -26,21 +26,33 @@ export default function Profile() {
     // Function to open E-Mail
     window.location.href = 'mailto:shubham2003garg@gmail.com';
   };
+  const openResume = () => {
+    // Function to open Resume in the new tab
+    window.open('https://shubhamistic.github.io/resume/', '_blank');
+  };
 
   return (
     <div className="profile">
-      <div className="profile-links">
-        {/*Open GitHub in the new tab button*/}
-        <button className="square-btn" onClick={openGithub}>
-          <FontAwesomeIcon icon={faGithub} className="icon" />
-        </button>
-        {/*Open LinkedIn in the new tab button*/}
-        <button className="square-btn" onClick={openLinkedIn}>
-          <FontAwesomeIcon icon={faLinkedinIn} className="icon" />
-        </button>
-        {/*Open E-Mail button*/}
-        <button className="square-btn" onClick={openMail}>
-          <FontAwesomeIcon icon={faEnvelope} className="icon" />
+      <div className="profile-redirects">
+        <div className="profile-links">
+          {/*Open GitHub in the new tab button*/}
+          <button className="square-btn" onClick={openGithub}>
+            <FontAwesomeIcon icon={faGithub} className="icon" />
+          </button>
+          {/*Open LinkedIn in the new tab button*/}
+          <button className="square-btn" onClick={openLinkedIn}>
+            <FontAwesomeIcon icon={faLinkedinIn} className="icon" />
+          </button>
+          {/*Open E-Mail button*/}
+          <button className="square-btn" onClick={openMail}>
+            <FontAwesomeIcon icon={faEnvelope} className="icon" />
+          </button>
+        </div>
+
+        {/*Redirect to Resume page in the new tab button*/}
+        <button className="rect-btn text-and-icon-btn resume-btn" onClick={openResume}>
+          <p>RESUME</p>
+          <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="icon"/>
         </button>
       </div>
 
@@ -56,11 +68,11 @@ export default function Profile() {
       <div className="line"></div>
 
       <p className="about-text">
-        <b>Hi</b>, my name is Shubham Garg. 👋 I'm a B.Tech Computer Science student at
-        Manipal University Jaipur with nearly 4 years of coding experience. 💻
-        An enthusiast in development with strong logic building, I hold multiple
-        certifications and aim to be a full-stack web developer creating
-        impactful solutions. 🚀
+        <b>Hi</b>, my name is <b>Shubham Garg</b>. 👋 I'm a B.Tech Computer
+        Science student at Manipal University Jaipur with nearly 4 years of
+        coding experience. 💻 An enthusiast in development with strong logic
+        building, I hold multiple certifications and aim to be a full-stack
+        web developer creating impactful solutions. 🚀
       </p>
     </div>
   );

@@ -3,7 +3,7 @@
 
 .nav-bar {
   z-index: 99;
-  height: 120px;
+  height: 90px;
   width: 100%;
   max-width: 1500px;
   display: flex;
@@ -23,36 +23,29 @@
       gap: 30px;
     }
 
-    .nav-section-2 .resume-btn {
-      opacity: 1;
-      border-color: #a77bf3;
-      background-color: #1e0646;
-      box-shadow: inset -2px -2px 10px #320b75;
-      p, .icon {color: #a77bf3;}
-    }
-
-    .nav-section-ss-1 {display: none;}
-
-    .my-profile-btn{
+    .nav-section-3 .my-profile-btn{
       opacity: 1;
       img {height: 100%;}
     }
+
+    .nav-section-ss-1 {display: none;}
   }
 
   .nav-bar-bottom {
-    height: 60px;
+    flex: 1;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 
     .nav-section-expanded {
-      height: 40px;
-      width: 550px;
+      height: 100%;
+      width: 540px;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      background-color: rgba(128, 128, 128, 0.5);
+      border-radius: 5px;
+      backdrop-filter: blur(10px);
     }
   }
 }
@@ -84,9 +77,7 @@
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .nav-bar {
     .nav-bar-top {
-      .nav-section {gap: 25px;}
-      .nav-section-ss-1 {display: unset;}
-      .nav-section-2 {display: none;}
+      .nav-section {gap: 20px;}
     }
   }
 }
