@@ -9,20 +9,20 @@ export default function App() {
   const { showProfile } = useMain();
 
   return (
-    <div className="app">
-      <div className="nav-bar-container">
-        <NavBar />
-      </div>
-
+    <div className="fixed app">
       <main>
         <div className="hero-section-container">
           <HeroSection />
         </div>
       </main>
 
-      {/*div with absolute position*/}
+      {/*div with fixed position*/}
+      <div className="fixed nav-bar-container">
+        <NavBar />
+      </div>
+
       {showProfile && (
-        <div className="profile-container">
+        <div className="fixed profile-container">
           <Profile />
         </div>
       )}

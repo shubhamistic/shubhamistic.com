@@ -14,13 +14,12 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overscroll-behavior: none;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   scroll-behavior: smooth;
-  overflow: hidden;
+  background-color: #000414;
 
   #root {
     min-height: 575px;

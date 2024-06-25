@@ -1,21 +1,24 @@
 @import "../scss_components/buttons";
 @import "../scss_components/polygons";
+@import "../scss_components/animations";
 
 .nav-bar {
   z-index: 99;
-  height: 90px;
+  height: 60px;
   width: 100%;
   max-width: 1500px;
   display: flex;
   flex-direction: column;
+  pointer-events: none;
 
-  .nav-bar-top {
+  .nav-bar-common {
     height: 60px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     backdrop-filter: blur(10px);
+    pointer-events: auto;
 
     .nav-section {
       height: 30px;
@@ -31,7 +34,50 @@
     .nav-section-ss-1 {display: none;}
   }
 
-  .nav-bar-bottom {
+  .nav-bar-mobile {
+    position: absolute;
+    height: 100%;
+    width: 175px;
+    padding: 0 10px;
+    transform: translate(-20px, 0);
+    border-right: solid 1px gray;
+    box-shadow: inset -2px -2px 10px #424242;
+    background-color: rgba(54, 54, 54, 0.75);
+    pointer-events: auto;
+    animation: slide-left-to-right 0.25s ease-in forwards;
+    backdrop-filter: blur(10px);
+
+    .line {
+      width: 100%;
+      border-top: solid 1px gray;
+    }
+
+    .close-nav-section-ss-2 {
+      width: 100%;
+      aspect-ratio: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .icon {
+        font-size: 25px;
+        color: whitesmoke;
+        opacity: 0.75;
+
+        &:hover {opacity: 1;}
+      }
+    }
+
+    .nav-sections-ss-2 {
+      width: 100%;
+      margin: 50px 0 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+
+  .nav-bar-tablet {
     flex: 1;
     width: 100%;
     display: flex;
@@ -53,7 +99,7 @@
 /* Mobile devices */
 @media screen and (max-width: 600px) {
   .nav-bar {
-    .nav-bar-top {
+    .nav-bar-common {
       .nav-section {gap: 25px;}
       .nav-section-ss-1 {display: unset}
       .nav-section-1,
@@ -65,7 +111,7 @@
 /* iPads, Tablets */
 @media screen and (min-width: 601px) and (max-width: 768px) {
   .nav-bar {
-    .nav-bar-top {
+    .nav-bar-common {
       .nav-section {gap: 25px;}
       .nav-section-ss-1 {display: unset;}
       .nav-section-2 {display: none;}
@@ -76,7 +122,7 @@
 /* Small screens, laptops */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .nav-bar {
-    .nav-bar-top {
+    .nav-bar-common {
       .nav-section {gap: 20px;}
     }
   }
@@ -85,6 +131,6 @@
 /* Large Devices (Desktops) */
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
   .nav-bar {
-    .nav-bar-top .nav-section {gap: 25px;}
+    .nav-bar-common .nav-section {gap: 25px;}
   }
 }

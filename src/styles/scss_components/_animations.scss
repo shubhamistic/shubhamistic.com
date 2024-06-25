@@ -7,3 +7,7 @@
 @keyframes fade-in {
   from {opacity: 0;}
 }
+
+@keyframes slide-left-to-right {
+  from {transform: translateX(-100%);}
+}

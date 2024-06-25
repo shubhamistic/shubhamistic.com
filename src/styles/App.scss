@@ -3,45 +3,45 @@
 
 p {font-family: 'Changa', sans-serif;}
 
-.app {
-  position: relative;
-  width: 100%;
+.fixed {
+  position: fixed;
+  top: 0;
+  min-width: 320px;
   padding: 0 75px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-image: linear-gradient(to bottom right, #000414, #19001f, #000f0e);
+}
 
-  .nav-bar-container {
-    z-index: 999;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
+.app {
+  position: unset;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(to bottom right, #000414, #19001f, #000f0e);
 
   main {
     width: 100%;
     max-width: 1500px;
     min-height: 10000px; // temp
-    transform: translate(0, -60px);
 
     .hero-section-container {
       min-height: 575px;
-      height: calc(100dvh - 60px);
+      height: 100dvh;
       width: 100%;
     }
   }
 
+  .nav-bar-container {
+    z-index: 999;
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    justify-content: center;
+  }
+
   .profile-container {
     z-index: 999;
-    position: fixed;
     top: 60px;
-    min-width: 320px;
     width: 100%;
-    max-width: 1650px;
-    padding: 0 75px;
+    max-width: 1500px;
     display: flex;
     justify-content: flex-end;
     pointer-events: none;
@@ -51,44 +51,28 @@ p {font-family: 'Changa', sans-serif;}
 
 /* Mobile devices */
 @media screen and (max-width: 600px) {
-  .app {
-    padding: 0 20px;
-    main {
-      .hero-section-container {
-        min-height: unset;
-        height: 300px;
-      }
-    }
-    .profile-container {padding: 0 20px;}
+  .fixed { padding: 0 20px; }
+  .app main .hero-section-container {
+    min-height: unset;
+    height: 350px;
   }
 }
 
 /* iPads, Tablets */
 @media screen and (min-width: 601px) and (max-width: 768px) {
-  .app {
-    padding: 0 30px;
-    main {
-      .hero-section-container {
-        min-height: unset;
-        height: 350px;
-      }
-    }
-    .profile-container {padding: 0 30px;}
+  .fixed { padding: 0 30px; }
+  .app main .hero-section-container {
+    min-height: unset;
+    height: 400px;
   }
 }
 
 /* Small screens, laptops */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .app {
-    padding: 0 50px;
-    .profile-container {padding: 0 50px;}
-  }
+  .fixed { padding: 0 50px; }
 }
 
 /* Large Devices (Desktops) */
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
-  .app {
-    padding: 0 50px;
-    .profile-container {padding: 0 50px;}
-  }
+  .fixed { padding: 0 50px; }
 }
