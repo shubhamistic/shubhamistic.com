@@ -20,12 +20,27 @@ p {font-family: 'Changa', sans-serif;}
   main {
     width: 100%;
     max-width: 1500px;
-    min-height: 10000px; // temp
 
     .hero-section-container {
       min-height: 575px;
       height: 100dvh;
       width: 100%;
+    }
+
+    .projects-section-container {
+      min-height: 500px; // temp
+    }
+    .experience-section-container {
+      min-height: 500px; // temp
+    }
+    .skills-section-container {
+      min-height: 500px; // temp
+    }
+    .achievements-section-container {
+      min-height: 500px; // temp
+    }
+    .contact-section-container {
+      min-height: 500px; // temp
     }
   }
 
@@ -55,6 +70,7 @@ p {font-family: 'Changa', sans-serif;}
   .app main .hero-section-container {
     min-height: unset;
     height: 350px;
+    padding: 60px 0 0 0;
   }
 }
 
@@ -64,6 +80,7 @@ p {font-family: 'Changa', sans-serif;}
   .app main .hero-section-container {
     min-height: unset;
     height: 400px;
+    padding: 90px 0 0 0;
   }
 }
 

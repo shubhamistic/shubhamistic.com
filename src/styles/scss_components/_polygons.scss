@@ -1,9 +1,18 @@
+// Define the mixin
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .vertical-hexagon {
   clip-path: polygon(50% 0, 100% 10%, 100% 90%, 50% 100%, 0 90%, 0 10%);
+  @include flex-center;
 }
 
 .horizontal-hexagon {
   clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+  @include flex-center;
 }
 
 .horizontal-octagon {

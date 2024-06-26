@@ -1,0 +1,39 @@
+.section-heading{
+  height: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  .sh-line {
+    flex: 1;
+    border-top: solid 2px rgba(128, 128, 128, 0.75);
+  }
+
+  .horizontal-hexagon {
+    height: 100%;
+    padding: 0 15px;
+    background-color: rgba(128, 128, 128, 0.75);
+
+    p {
+      font-size: 20px;
+      color: whitesmoke;
+      opacity: 0.75;
+    }
+  }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 600px) {
+  .section-heading .horizontal-hexagon {
+    height: 25px;
+    padding: 0 10px;
+    p {font-size: 16px;}
+  }
+}
+
+/* iPads, Tablets */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  .section-heading .horizontal-hexagon {
+    p {font-size: 18px;}
+  }
+}
